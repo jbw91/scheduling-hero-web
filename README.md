@@ -9,7 +9,8 @@ This project uses the webpack branch of angular-cli. Make sure you run these com
 ```shell
 $ npm uninstall -g angular-cli
 $ npm cache clean
-$ npm install -g angular-cli@webpack
+$ npm install -g angular-cli@webpack typescript@2.0.0
+$ rm -rf node_modules dist tmp typings && npm install --save-dev angular-cli@webpack && npm install
 ```
 
 ## Development server
