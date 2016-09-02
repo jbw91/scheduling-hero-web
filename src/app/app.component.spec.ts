@@ -23,11 +23,4 @@ describe('App: SchedulingHeroWeb', () => {
     let app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Scheduling Hero');
   }));
-
-  it('should render title in a h1 tag', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Scheduling Hero');
-  }));
 });

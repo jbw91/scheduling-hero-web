@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<nav>
+  <div materialize="nav-wrapper" class="nav-wrapper cyan darken-1">
+    <a class="brand-logo title">{{title}}</a>
+    <a data-activates="mobile-demo" materialize="button-collapse" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+      <li><a routerLink="/invitee" routerLinkActive="active">Invitee</a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
