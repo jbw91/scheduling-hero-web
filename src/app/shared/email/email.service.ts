@@ -17,7 +17,7 @@ export class EmailService {
 
   private handleResponse(res: Response) {
     let status = res.status;
-    return status == 204 ? true : false;
+    return status === 204 ? true : false;
   }
 
   private handleError(error: any) {
