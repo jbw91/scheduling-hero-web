@@ -9,7 +9,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'invitee', component: InviteeComponent },
   { path: 'admin', component: AdminComponent },
-  { path: '**', component: HomeComponent }
+  { path: '**', redirectTo: 'home' }
 ];
 
 export const appRoutingProviders: any[] = [

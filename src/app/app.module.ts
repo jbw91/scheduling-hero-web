@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { InviteeComponent } from './invitee/invitee.component';
 import { AdminComponent } from './admin/admin.component';
+import { EmailService } from './shared';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AdminComponent } from './admin/admin.component';
     routing
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    EmailService
   ],
   bootstrap: [AppComponent]
 })
