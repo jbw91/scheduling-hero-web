@@ -7,14 +7,13 @@ export class SessionStorageService {
   private token: string;
   constructor() {}
 
-  public getToken() {
+  public getToken(key: string) {
     return new Observable(observer => {
-      observer.next(this.token);
+      observer.next(sessionStorage.getItem(key));
     });
   }
 
-  public setToken(token: string) {
-    this.token = token;
-    sessionStorage.setItem('access_token', this.token);
+  public setToken(key: string, value: string) {
+    sessionStorage.setItem(key, this.token);
   }
 }
