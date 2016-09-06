@@ -4,8 +4,7 @@ import { SessionStorageService } from '../shared';
 
 @Component({
   selector: 'app-auth-redirect',
-  template: '<div></div>',
-  providers: [SessionStorageService]
+  template: '<div></div>'
 })
 export class AuthRedirectComponent implements OnInit {
 
