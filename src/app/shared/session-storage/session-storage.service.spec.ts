@@ -11,14 +11,14 @@ describe('Service: SessionStorage', () => {
   });
 
   it('should set session storage variables correctly', inject([SessionStorageService], (service: SessionStorageService) => {
-    spyOn(service, 'setToken');
-    service.setToken('test', 'this is a test');
-    expect(service.setToken).toHaveBeenCalledWith('test', 'this is a test');
+    spyOn(service, 'setValue');
+    service.setValue('test', 'this is a test');
+    expect(service.setValue).toHaveBeenCalledWith('test', 'this is a test');
   }));
 
   it('should get session storage variables correctly', inject([SessionStorageService], (service: SessionStorageService) => {
-    service.setToken('test', 'this is a test');
-    return service.getToken('test').toPromise().then(result => {
+    service.setValue('test', 'this is a test');
+    return service.getValue('test').toPromise().then(result => {
       expect(result).toBe('this is a test');
     })
   }));

@@ -20,7 +20,7 @@ export class AuthRedirectComponent implements OnInit {
     .queryParams
     .subscribe(params => {
       if (!this.done) {
-        this.storage.setToken('access_token', params['access_token']);
+        this.storage.setValue('access_token', params['access_token']);
         this.done = true;
         this.router.navigate(['/home']);
       }
