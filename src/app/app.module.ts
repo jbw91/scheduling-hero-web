@@ -17,8 +17,8 @@ import { AuthRedirectComponent } from './auth-redirect/auth-redirect.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     MaterializeDirective,
+    AppComponent,
     HomeComponent,
     InviteeComponent,
     AdminComponent,
