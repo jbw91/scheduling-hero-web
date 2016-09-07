@@ -7,11 +7,12 @@ import 'angular2-materialize';
 import { MaterializeDirective } from 'angular2-materialize';
 import { routing, appRoutingProviders } from './app.routing';
 
+import { EmailService, SessionStorageService, EventService } from './shared';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { InviteeComponent } from './invitee/invitee.component';
 import { AdminComponent } from './admin/admin.component';
-import { EmailService, SessionStorageService } from './shared';
 import { AuthRedirectComponent } from './auth-redirect/auth-redirect.component';
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AuthRedirectComponent } from './auth-redirect/auth-redirect.component';
   providers: [
     appRoutingProviders,
     EmailService,
-    SessionStorageService
+    SessionStorageService,
+    EventService
   ],
   bootstrap: [AppComponent]
 })
