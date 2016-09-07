@@ -20,6 +20,6 @@ describe('Service: SessionStorage', () => {
     service.setValue('test', 'this is a test');
     return service.getValue('test').toPromise().then(result => {
       expect(result).toBe('this is a test');
-    })
+    });
   }));
 });
