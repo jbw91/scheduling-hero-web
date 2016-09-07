@@ -11,7 +11,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { InviteeComponent } from './invitee/invitee.component';
 import { AdminComponent } from './admin/admin.component';
-import { EmailService } from './shared';
+import { EmailService, SessionStorageService } from './shared';
+import { AuthRedirectComponent } from './auth-redirect/auth-redirect.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EmailService } from './shared';
     MaterializeDirective,
     HomeComponent,
     InviteeComponent,
-    AdminComponent
+    AdminComponent,
+    AuthRedirectComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { EmailService } from './shared';
   ],
   providers: [
     appRoutingProviders,
-    EmailService
+    EmailService,
+    SessionStorageService
   ],
   bootstrap: [AppComponent]
 })
