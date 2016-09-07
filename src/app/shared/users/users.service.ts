@@ -5,32 +5,32 @@ import { User } from './user.model';
 
 @Injectable()
 export class UsersService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'http://localhost:3000/users';
 
   constructor(private http: Http) {}
 
   public getAllUsers(): Observable<User[]> {
-    return this.http.get(`${this.apiUrl}/users`)
+    return this.http.get(`${this.apiUrl}`)
                .map(response => response.json())
                .catch(this.handleError);
   }
   public getUserById(id: string): Observable<User> {
-    return this.http.get(`${this.apiUrl}/users/${id}`)
+    return this.http.get(`${this.apiUrl}/${id}`)
                .map(response => response.json())
                .catch(this.handleError);
   }
   public getEventsByUser(id: string): Observable<Event[]> {
-    return this.http.get(`${this.apiUrl}/users/${id}/events`)
+    return this.http.get(`${this.apiUrl}/${id}/events`)
                .map(response => response.json())
                .catch(this.handleError);
   }
   public updateUser(id: string, user: User): Observable<boolean> {
-    return this.http.put(`${this.apiUrl}/users/${id}`, user)
+    return this.http.put(`${this.apiUrl}/${id}`, user)
                .map(this.handleResponse)
                .catch(this.handleError);
   }
   public deleteUser(id: string): Observable<boolean> {
-    return this.http.delete(`${this.apiUrl}/users/${id}`)
+    return this.http.delete(`${this.apiUrl}/${id}`)
                .map(this.handleResponse)
                .catch(this.handleError);
   }
