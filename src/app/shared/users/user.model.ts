@@ -3,7 +3,7 @@ export interface User {
   userId: number;
   username: string;
   email: string;
-  dateCreated: Date;
+  dateCreated?: Date;
   profilePhoto: string;
-  refreshToken: string;
+  refreshToken?: string;
 }
