@@ -26,32 +26,23 @@ export class MiniCalendarComponent implements OnInit {
 
   public select(day) {
     this.selected = day.date;
-    // this.changeSelected.emit(this.selected);
     this.changeSelected.emit(this._buildWeek(day.date, this._removeTime(day.date)));
   };
 
   public isInWeek(day) {
     if (this.selected && this.selected.isSame) {
-      let first = this.selected.clone();
-      first = first.isoWeekday(0);
-      let last = this.selected.clone();
-      last = last.isoWeekday(6);
-      return first.isSame(day.date) || first.isAfter(day.date) || last.isBefore(day.date) || last.isSame(day.date);
+      if (this.showWeek) {
+        let tempMoment = this.selected.clone();
+        tempMoment.isoWeekday(0);
+        let otherTempMoment = this.selected.clone();
+        otherTempMoment.isoWeekday(7);
+        otherTempMoment.isAfter(day.date);
+        return tempMoment.isSame(day.date) || (tempMoment.isBefore(day.date) && otherTempMoment.isAfter(day.date));
+      } else {
+        return this.selected.isSame(day.date);
+      }
     }
-    // return this.selected.isoWeekday(7);
-    // if (this.selected && this.selected.isSame) {
-    //   if (!this.showWeek) {
-    //     let tempMoment = this.selected.clone();
-    //     tempMoment.isoWeekday(0);
-    //     let otherTempMoment = this.selected.clone();
-    //     otherTempMoment.isoWeekday(7);
-    //     otherTempMoment.isAfter(day.date);
-    //     return tempMoment.isSame(day.date) || (tempMoment.isBefore(day.date) && otherTempMoment.isAfter(day.date));
-    //   } else {
-    //     return this.selected.isSame(day.date);
-    //   }
-    // }
-    // return false;
+    return false;
   };
 
   public next() {
