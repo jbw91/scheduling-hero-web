@@ -7,7 +7,7 @@ import 'angular2-materialize';
 import { MaterializeDirective } from 'angular2-materialize';
 import { routing, appRoutingProviders } from './app.routing';
 
-import { EmailService, SessionStorageService, EventService } from './shared';
+import { EmailService, SessionStorageService, EventService, UsersService } from './shared';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -34,7 +34,8 @@ import { AuthRedirectComponent } from './auth-redirect/auth-redirect.component';
     appRoutingProviders,
     EmailService,
     SessionStorageService,
-    EventService
+    EventService,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })
