@@ -14,4 +14,8 @@ export class InviteeComponent implements OnInit {
   ngOnInit() {
   }
 
+  weekChanged(arg) {
+    console.log(arg);
+  }
+
 }

@@ -5,7 +5,7 @@
       <i class="material-icons valign" (click)="next()">chevron_right</i>
   </div>
   <div class="center-align">
-    <a class="waves-effect waves-light btn cyan darken-1">Today</a>
+    <a class="waves-effect waves-light btn cyan darken-1" (click)="today()">Today</a>
   </div>
   <div class="week" *ngFor="let week of weeks">
     <span class="day" [ngClass]="{ 'today': day.isToday, 'different-month': !day.isCurrentMonth, 'selected': isInWeek(day) }"

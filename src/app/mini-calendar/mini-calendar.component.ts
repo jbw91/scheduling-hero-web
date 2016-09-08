@@ -26,41 +26,54 @@ export class MiniCalendarComponent implements OnInit {
 
   public select(day) {
     this.selected = day.date;
-    this.changeSelected.emit(this.selected);
+    // this.changeSelected.emit(this.selected);
+    this.changeSelected.emit(this._buildWeek(day.date, this._removeTime(day.date)));
   };
 
-  public isInWeek(day){
-    if(this.selected && this.selected.isSame) {
-      if(this.showWeek){
-        let tempMoment = this.selected.clone();
-        tempMoment.isoWeekday(0);
-        let otherTempMoment = this.selected.clone();
-        otherTempMoment.isoWeekday(7);
-        otherTempMoment.isAfter(day.date);
-        return tempMoment.isSame(day.date) || (tempMoment.isBefore(day.date) && otherTempMoment.isAfter(day.date));
-      }else{
-        return this.selected.isSame(day.date);
-      }
+  public isInWeek(day) {
+    if (this.selected && this.selected.isSame) {
+      let first = this.selected.clone();
+      first = first.isoWeekday(0);
+      let last = this.selected.clone();
+      last = last.isoWeekday(6);
+      return first.isSame(day.date) || first.isAfter(day.date) || last.isBefore(day.date) || last.isSame(day.date);
     }
-    return false;
+    // return this.selected.isoWeekday(7);
+    // if (this.selected && this.selected.isSame) {
+    //   if (!this.showWeek) {
+    //     let tempMoment = this.selected.clone();
+    //     tempMoment.isoWeekday(0);
+    //     let otherTempMoment = this.selected.clone();
+    //     otherTempMoment.isoWeekday(7);
+    //     otherTempMoment.isAfter(day.date);
+    //     return tempMoment.isSame(day.date) || (tempMoment.isBefore(day.date) && otherTempMoment.isAfter(day.date));
+    //   } else {
+    //     return this.selected.isSame(day.date);
+    //   }
+    // }
+    // return false;
   };
 
   public next() {
     let next = this.month.clone();
-    this._removeTime(next.month(next.month()+1).date(1));
-    this.month.month(this.month.month()+1);
+    this._removeTime(next.month(next.month() + 1).date(1));
+    this.month.month(this.month.month() + 1);
     this._buildMonth(this, next, this.month);
   };
 
   public previous() {
     let previous = this.month.clone();
-    this._removeTime(previous.month(previous.month()-1).date(1));
-    this.month.month(this.month.month()-1);
+    this._removeTime(previous.month(previous.month() - 1).date(1));
+    this.month.month(this.month.month() - 1);
     this._buildMonth(this, previous, this.month);
   };
 
   public _removeTime(date) {
     return date.day(0).hour(0).minute(0).second(0).millisecond(0);
+  }
+
+  public _addTime(date) {
+    return date.day(6).hour(23).minute(59).second(59).millisecond(59);
   }
 
   public _buildWeek(date, month) {

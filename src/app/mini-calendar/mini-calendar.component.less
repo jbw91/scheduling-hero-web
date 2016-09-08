@@ -11,16 +11,14 @@
   box-sizing:border-box;
   -moz-box-sizing:border-box;
 }
-@border-color:#CCC;
 .mini-calendar-component {
   float:left;
   display:block;
   .border-box;
   background:@white;
   width:190px;
-  border:solid 1px @border-color;
+  border:solid 1px @gray;
 
-  @secondary-color:#00acc1;
   @spacing:0px;
   @icon-width:30px;
   @header-height:40px;
@@ -36,8 +34,8 @@
     width:100%;
     background:@white;
     height:@header-height;
-    color:@secondary-color;
-    border-bottom:solid 1px @border-color;
+    color:@cyan-darken-1;
+    border-bottom:solid 1px @gray;
 
     >* {
       .vertical-center(@header-height);
@@ -97,16 +95,16 @@
       }
 
       &.selected {
-        background:@day-selected;
+        background:@cyan-darken-1;
         color:@white;
       }
 
     }
 
     &.names>span {
-      color:@secondary-color;
+      color:@cyan-darken-1;
       font-weight:bold;
-      border-bottom:solid 1px @border-color;
+      border-bottom:solid 1px @gray;
     }
   }
 }
