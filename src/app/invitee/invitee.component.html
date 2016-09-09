@@ -1,1 +1,14 @@
-<app-mini-calendar (changeSelected)="weekChanged($event)"></app-mini-calendar>
+<div class="row invitee-component">
+  <div class="col s12 m4 l3">
+    <app-mini-calendar class="col s12" (changeSelected)="weekChanged($event)"></app-mini-calendar>
+    <div class="col s12 button">
+      <a class="waves-effect waves-light btn cyan darken-1 col s12" (click)="connect()">connect google calendar</a>
+    </div>
+    <div class="col s12 button">
+      <a class="waves-effect waves-light btn cyan darken-1 submit-button col s12" (click)="submit()">submit response</a>
+    </div>
+  </div>
+  <div class="col s12 m8 l9">
+    <app-week-view [week]="week" [selectedDay]="selectedDay" (response)="updateResponse($event)"></app-week-view>
+  </div>
+</div>

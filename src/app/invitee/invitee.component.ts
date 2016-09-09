@@ -9,13 +9,29 @@ import { MiniCalendarComponent } from '../mini-calendar';
 })
 export class InviteeComponent implements OnInit {
 
+  week: any;
+  selectedDay: any;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  weekChanged(arg) {
-    console.log(arg);
+  weekChanged(obj) {
+    this.week = obj.week;
+    this.selectedDay = obj.day;
+  }
+
+  updateResponse(response) {
+    console.log(response);
+  }
+
+  connect() {
+
+  }
+
+  submit() {
+
   }
 
 }
