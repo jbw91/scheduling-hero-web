@@ -11,19 +11,18 @@ import { EmailService, SessionStorageService, EventService, UsersService } from 
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { InviteeComponent } from './invitee/invitee.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthRedirectComponent } from './auth-redirect/auth-redirect.component';
-import { InviteeComponent, WeekViewComponent } from './invitee';
 
 @NgModule({
   declarations: [
-    MaterializeDirective,
     AppComponent,
+    MaterializeDirective,
     HomeComponent,
     InviteeComponent,
     AdminComponent,
-    AuthRedirectComponent,
-    WeekViewComponent
+    AuthRedirectComponent
   ],
   imports: [
     BrowserModule,
