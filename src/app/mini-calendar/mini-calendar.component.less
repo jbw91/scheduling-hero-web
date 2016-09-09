@@ -1,0 +1,111 @@
+@import '../../variables.less';
+
+.vertical-center (@height) {
+  height:@height;
+  line-height:@height !important;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.border-box {
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+}
+.mini-calendar-component {
+  float:left;
+  display:block;
+  .border-box;
+  background:@white;
+  width:190px;
+  border:solid 1px @gray;
+  margin: 0.5rem 0 1rem 0;
+
+  @spacing:0px;
+  @icon-width:30px;
+  @header-height:40px;
+
+  .btn {
+    height: 20px;
+    line-height: 20px;
+    margin: 10px 0 10px 0;
+  }
+
+  .header {
+    float:left;
+    width:100%;
+    background:@white;
+    height:@header-height;
+    color:@cyan-darken-1;
+    border-bottom:solid 1px @gray;
+
+    >* {
+      .vertical-center(@header-height);
+    }
+
+    >i {
+      float:left;
+      width:@icon-width;
+      font-weight:bold;
+      position:relative;
+      .border-box;
+      padding:0 @spacing;
+      cursor:pointer;
+    }
+
+    >span {
+      float:left;
+      width:100%;
+      font-weight:bold;
+      text-transform:uppercase;
+      .border-box;
+      padding-left:@icon-width+@spacing;
+      text-align:center;
+      padding-right:@icon-width;
+      color:inherit;
+    }
+  }
+  >div.week {
+    float:left;
+    width:100%;
+
+    &:first-child {
+      border-top:none;
+    }
+
+    >span.day {
+      float:left;
+      width:100%/7;
+      .border-box;
+      font-size:0.75em;
+      text-align:center;
+      .vertical-center(30px);
+      background:@white;
+      cursor:pointer;
+      color:@black;
+
+      &:first-child {
+        border-left:none;
+      }
+
+      &.today {
+        background:@today;
+      }
+
+      &.different-month {
+        color:@different-month;
+      }
+
+      &.selected {
+        background:@cyan-darken-1;
+        color:@white;
+      }
+
+    }
+
+    &.names>span {
+      color:@cyan-darken-1;
+      font-weight:bold;
+      border-bottom:solid 1px @gray;
+    }
+  }
+}
