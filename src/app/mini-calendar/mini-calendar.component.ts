@@ -15,6 +15,10 @@ export class MiniCalendarComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    this.thisMonth();
+  }
+
+  public thisMonth() {
     this.month = moment(this.selected).clone();
 
     let start = moment(this.selected).clone();
@@ -22,11 +26,13 @@ export class MiniCalendarComponent implements OnInit {
     this._removeTime(start.day(0));
 
     this._buildMonth(this, start, this.month);
+
   }
 
   public select(day) {
     this.selected = day.date;
-    this.changeSelected.emit(this._buildWeek(day.date, this._removeTime(day.date)));
+    let date = this.selected.clone();
+    this.changeSelected.emit({week: this._buildWeek(date, this._removeTime(date)), day: this.selected});
   };
 
   public isInWeek(day) {
@@ -61,10 +67,6 @@ export class MiniCalendarComponent implements OnInit {
 
   public _removeTime(date) {
     return date.day(0).hour(0).minute(0).second(0).millisecond(0);
-  }
-
-  public _addTime(date) {
-    return date.day(6).hour(23).minute(59).second(59).millisecond(59);
   }
 
   public _buildWeek(date, month) {
