@@ -1,11 +1,11 @@
-<div class="mini-calendar-component">
+<div class="mini-calendar-component col s12">
   <div class="header valign-wrapper">
       <i class="material-icons valign" (click)="previous()">chevron_left</i>
       <span class="valign">{{month.format("MMM YYYY")}}</span>
       <i class="material-icons valign" (click)="next()">chevron_right</i>
   </div>
   <div class="center-align">
-    <a class="waves-effect waves-light btn cyan darken-1" (click)="thisMonth()">Today</a>
+    <a class="waves-effect waves-light btn cyan darken-1" (click)="today()">Today</a>
   </div>
   <div class="week" *ngFor="let week of weeks">
     <span class="day" [ngClass]="{ 'today': day.isToday, 'different-month': !day.isCurrentMonth, 'selected': isInWeek(day) }"

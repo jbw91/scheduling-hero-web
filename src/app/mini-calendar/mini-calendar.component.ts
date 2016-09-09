@@ -15,10 +15,18 @@ export class MiniCalendarComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.thisMonth();
+    this.selected = moment(new Date());
+    let date = this.selected.clone();
+    this.changeSelected.emit({week: this._buildWeek(date, this._removeTime(date)), day: this.selected});
+    this.populate();
   }
 
-  public thisMonth() {
+  public today() {
+    this.selected = moment(new Date());
+    this.populate();
+  }
+
+  public populate() {
     this.month = moment(this.selected).clone();
 
     let start = moment(this.selected).clone();
