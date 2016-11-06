@@ -1,16 +1,13 @@
 # SchedulingHeroWeb
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.11-webpack.8.
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
 
 ## Prerequisites
 
-This project uses the webpack branch of angular-cli. Make sure you run these commands before developing on this project:
+This project uses angular-cli. Make sure you run the following command before developing on this project:
 
 ```shell
-$ npm uninstall -g angular-cli
-$ npm cache clean
-$ npm install -g angular-cli@webpack typescript@2.0.0
-$ rm -rf node_modules dist tmp typings && npm install --save-dev angular-cli@webpack && npm install
+$ npm install -g angular-cli typescript
 ```
 
 ## Development server

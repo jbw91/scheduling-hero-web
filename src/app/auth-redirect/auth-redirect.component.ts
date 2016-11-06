@@ -17,6 +17,7 @@ export class AuthRedirectComponent implements OnInit {
   ngOnInit() {
     this.router
     .routerState
+    .root
     .queryParams
     .subscribe(params => {
       if (!this.done) {
