@@ -1,12 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
 import { SessionStorageService } from './session-storage.service';
+import { RouterOutletStubComponent } from '../../../testing';
 
 describe('Service: SessionStorage', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SessionStorageService]
+      declarations: [RouterOutletStubComponent],
+      providers: [SessionStorageService],
+      imports: [HttpModule]
     });
   });
 

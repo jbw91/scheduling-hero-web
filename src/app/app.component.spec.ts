@@ -1,14 +1,18 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
+import { RouterOutletStubComponent } from '../testing';
 import { AppComponent } from './app.component';
 
 describe('App: SchedulingHeroWeb', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        RouterOutletStubComponent
       ],
+      imports: [HttpModule]
     });
   });
 

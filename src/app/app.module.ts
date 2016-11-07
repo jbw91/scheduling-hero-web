@@ -11,18 +11,21 @@ import { EmailService, SessionStorageService, EventService, UsersService } from 
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { InviteeComponent } from './invitee/invitee.component';
 import { AdminComponent } from './admin/admin.component';
+import { MiniCalendarComponent } from './mini-calendar/mini-calendar.component';
 import { AuthRedirectComponent } from './auth-redirect/auth-redirect.component';
+import { InviteeComponent, WeekViewComponent } from './invitee';
 
 @NgModule({
   declarations: [
-    AppComponent,
     MaterializeDirective,
+    AppComponent,
     HomeComponent,
     InviteeComponent,
     AdminComponent,
-    AuthRedirectComponent
+    AuthRedirectComponent,
+    WeekViewComponent,
+    MiniCalendarComponent
   ],
   imports: [
     BrowserModule,

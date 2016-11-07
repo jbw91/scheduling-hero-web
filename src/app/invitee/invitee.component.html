@@ -1,12 +1,14 @@
-<div class="parallax-container">
-  <div class="parallax" materialize="parallax"><img src="http://materializecss.com/images/parallax1.jpg"></div>
-</div>
-<div class="section white">
-  <div class="row container">
-    <h2 class="header">Invitee</h2>
-    <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+<div class="row invitee-component">
+  <div class="col s12 m4 l3">
+    <app-mini-calendar class="col s12" (changeSelected)="weekChanged($event)"></app-mini-calendar>
+    <div class="col s12 button">
+      <a class="waves-effect waves-light btn cyan darken-1 col s12" (click)="connect()">Connect Google Calendar</a>
+    </div>
+    <div class="col s12 button">
+      <a class="waves-effect waves-light btn cyan darken-1 submit-button col s12" (click)="submit()">Submit Response</a>
+    </div>
   </div>
-</div>
-<div class="parallax-container">
-  <div class="parallax" materialize="parallax"><img src="http://materializecss.com/images/parallax2.jpg"></div>
+  <div class="col s12 m8 l9">
+    <app-week-view [week]="week" [selectedDay]="selectedDay" (response)="updateResponse($event)"></app-week-view>
+  </div>
 </div>
