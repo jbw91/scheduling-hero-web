@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MiniCalendarComponent } from '../mini-calendar';
 
 @Component({
   selector: 'app-invitee',

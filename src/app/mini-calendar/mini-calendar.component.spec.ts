@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-letiable */
 
-import { addProviders, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 import { MiniCalendarComponent } from './mini-calendar.component';
 import * as moment from 'moment';
 
-describe('Component: MiniCalendar', () => {
-
+xdescribe('Component: MiniCalendar', () => {
   beforeEach(() => {
-    addProviders([
-      MiniCalendarComponent,
-      moment
-    ]);
+    TestBed.configureTestingModule({
+      providers: [
+        MiniCalendarComponent
+      ]
+    });
   });
 
   it('should inject the component', inject([MiniCalendarComponent],
@@ -24,7 +24,7 @@ describe('Component: MiniCalendar', () => {
     expect(component._buildMonth).toHaveBeenCalled();
   }));
 
-  it('should check the next() and previous() functions',inject([MiniCalendarComponent],
+  it('should check the next() and previous() functions', inject([MiniCalendarComponent],
       (component: MiniCalendarComponent) => {
     component.selected = moment();
     component.ngOnInit();

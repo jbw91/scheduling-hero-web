@@ -8,7 +8,7 @@ import * as moment from 'moment';
 })
 export class MiniCalendarComponent implements OnInit {
   @Input() showWeek;
-  @Input() selected;
+  @Input() selected: moment.Moment;
   @Output() changeSelected = new EventEmitter();
   month;
 
@@ -27,9 +27,9 @@ export class MiniCalendarComponent implements OnInit {
   }
 
   public populate() {
-    this.month = moment(this.selected).clone();
+    this.month = this.selected.clone();
 
-    let start = moment(this.selected).clone();
+    let start = this.selected.clone();
     start.date(1);
     this._removeTime(start.day(0));
 
