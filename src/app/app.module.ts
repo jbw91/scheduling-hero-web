@@ -12,6 +12,7 @@ import { EmailService, SessionStorageService, EventService, UsersService } from 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
+import { MiniCalendarComponent } from './mini-calendar/mini-calendar.component';
 import { AuthRedirectComponent } from './auth-redirect/auth-redirect.component';
 import { InviteeComponent, WeekViewComponent } from './invitee';
 
@@ -23,7 +24,8 @@ import { InviteeComponent, WeekViewComponent } from './invitee';
     InviteeComponent,
     AdminComponent,
     AuthRedirectComponent,
-    WeekViewComponent
+    WeekViewComponent,
+    MiniCalendarComponent
   ],
   imports: [
     BrowserModule,

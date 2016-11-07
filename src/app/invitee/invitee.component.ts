@@ -4,8 +4,7 @@ import { MiniCalendarComponent } from '../mini-calendar';
 @Component({
   selector: 'app-invitee',
   templateUrl: './invitee.component.html',
-  styleUrls: ['./invitee.component.less'],
-  directives: [MiniCalendarComponent]
+  styleUrls: ['./invitee.component.scss']
 })
 export class InviteeComponent implements OnInit {
 

@@ -4,7 +4,7 @@ import * as moment from 'moment';
 @Component({
   selector: 'app-mini-calendar',
   templateUrl: 'mini-calendar.component.html',
-  styleUrls: ['mini-calendar.component.less']
+  styleUrls: ['mini-calendar.component.scss']
 })
 export class MiniCalendarComponent implements OnInit {
   @Input() showWeek;
